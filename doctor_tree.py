@@ -40,7 +40,7 @@ class DoctorTree:
                     print(f'{manager_name} already has an doctor on their {side.upper()} side. Try the other side.')
 
             else:
-                print("The selected doctor already has 2 direct subordinates.")
+                print(f'{side} is not a valid side, please insert at the LEFT or RIGHT side.')
 
             return True # manager found
 
