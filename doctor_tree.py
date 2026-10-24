@@ -97,3 +97,59 @@ class DoctorTree:
 
 
 # Test your DoctorTree and DoctorNode classes here
+#insertion tests partially taken from previous project
+doctor_directory = DoctorTree()
+
+print("Inserting/Traversing before setting root:")
+doctor_directory.insert("Dr. Croft", "Dr. Goldsmith", "right")
+doctor_directory.insert("Dr. Croft", "Dr. Phan", "left")
+doctor_directory.insert("Dr. Phan", "Dr. Carson", "right")
+doctor_directory.insert("Dr. Phan", "Dr. Morgan", "left")
+print(doctor_directory.preorder(doctor_directory.root))
+print(doctor_directory.inorder(doctor_directory.root))
+print(doctor_directory.postorder(doctor_directory.root))
+print("")
+
+doctor_directory.root = DoctorNode("Dr. Croft")
+
+print("Ivalid side value:")
+doctor_directory.insert("Dr. Croft", "Dr. Goldsmith", "up")
+doctor_directory.insert("Dr. Croft", "Dr. Phan", "down")
+doctor_directory.insert("Dr. Croft", "Dr. Carson", "east")
+doctor_directory.insert("Dr. Croft", "Dr. Morgan", "west")
+print(doctor_directory.preorder(doctor_directory.root))
+print(doctor_directory.inorder(doctor_directory.root))
+print(doctor_directory.postorder(doctor_directory.root))
+print("")
+
+print("Normal behavior:")
+doctor_directory.insert("Dr. Croft", "Dr. Goldsmith", "right")
+doctor_directory.insert("Dr. Croft", "Dr. Phan", "left")
+doctor_directory.insert("Dr. Phan", "Dr. Carson", "right")
+doctor_directory.insert("Dr. Phan", "Dr. Morgan", "left")
+print(doctor_directory.preorder(doctor_directory.root))
+print(doctor_directory.inorder(doctor_directory.root))
+print(doctor_directory.postorder(doctor_directory.root))
+print("")
+
+print("Slots already occupied:")
+doctor_directory.insert("Dr. Croft", "Dr. Goldsmith", "right")
+doctor_directory.insert("Dr. Croft", "Dr. Phan", "left")
+doctor_directory.insert("Dr. Phan", "Dr. Carson", "right")
+doctor_directory.insert("Dr. Phan", "Dr. Morgan", "left")
+print(doctor_directory.preorder(doctor_directory.root))
+print(doctor_directory.inorder(doctor_directory.root))
+print(doctor_directory.postorder(doctor_directory.root))
+print("")
+
+print("Manager does not exist:")
+doctor_directory.insert("Dr. NoExist", "Dr. Goldsmith", "right")
+doctor_directory.insert("Dr. NoExist", "Dr. Phan", "left")
+doctor_directory.insert("Dr. NoExist", "Dr. Carson", "right")
+doctor_directory.insert("Dr. NoExist", "Dr. Morgan", "left")
+print(doctor_directory.preorder(doctor_directory.root))
+print(doctor_directory.inorder(doctor_directory.root))
+print(doctor_directory.postorder(doctor_directory.root))
+print("")
+
+
