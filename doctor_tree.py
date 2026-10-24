@@ -62,4 +62,38 @@ class DoctorTree:
                 return
             return False #Implied based on the fact a return statment hasn't fired: the manager was not found anywhere in the tree
 
+    def preorder(self, node):
+        if node == None:
+            return [] #return empty array so logic further down works in any scenario
+        
+        result = []
+        #Root - Left - Right
+        result += [node.name]
+        result += self.preorder(node.left)
+        result += self.preorder(node.right)
+        return result
+
+    def inorder(self, node):
+        if node == None:
+            return [] #return empty array so logic further down works in any scenario
+
+        result = []
+        #Left - Root - Right
+        result += self.inorder(node.left)
+        result += [node.name]
+        result += self.inorder(node.right)
+        return result
+
+    def postorder(self, node):
+        if node == None:
+            return [] #return empty array so logic further down works in any scenario
+
+        result = []
+        #Left - Right - Root
+        result += self.postorder(node.left)
+        result += self.postorder(node.right)
+        result += [node.name]
+        return result
+
+
 # Test your DoctorTree and DoctorNode classes here
