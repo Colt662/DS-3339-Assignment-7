@@ -38,10 +38,10 @@ class MinHeap:
             right_index = index * 2 + 2
             smallest_index = index
 
-            if self.data[smallest_index].urgency > self.data[left_index].urgency: #urgency is backwards, 1 has greatest urgency 
+            if left_index < len(self.data) and self.data[smallest_index].urgency > self.data[left_index].urgency: #urgency is backwards, 1 has greatest urgency 
                 smallest_index = left_index
 
-            if self.data[smallest_index].urgency > self.data[right_index].urgency: #urgency is backwards, 1 has greatest urgency 
+            if right_index < len(self.data) and self.data[smallest_index].urgency > self.data[right_index].urgency: #urgency is backwards, 1 has greatest urgency 
                 smallest_index = right_index
 
             if index != smallest_index:
@@ -49,7 +49,7 @@ class MinHeap:
                 self.data[index] = self.data[smallest_index]
                 self.data[smallest_index] = temp
 
-                self.heapify_down(smallest_index)
+                self.heapify_down(smallest_index)#move node as far down as needed
 
 
     def insert(self, patient):
