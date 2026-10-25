@@ -56,7 +56,6 @@ class MinHeap:
 
                 self.heapify_down(smallest_index)
 
-# Test your MinHeap class here including edge cases
     def insert(self, patient):
         self.data.append(patient)
         self.heapify_up()
