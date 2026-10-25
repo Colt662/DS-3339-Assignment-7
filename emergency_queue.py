@@ -28,8 +28,8 @@ class MinHeap:
 
 
     def heapify_down(self, index=None):
-            if index == 0: #deletion, starting from top
-                index = len(self.data) - 1
+            if index == None: #deletion, starting from top
+                index = 0
     
             if index >= len(self.data): #reached bottom, everything is heaped correctly
                 return
