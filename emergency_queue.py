@@ -51,11 +51,21 @@ class MinHeap:
 
                 self.heapify_down(smallest_index)
 
+
     def insert(self, patient):
         self.data.append(patient)
         self.heapify_up()
+
 
     def print_heap(self):
         print("Current Patient Queue: ")
         for patient in self.data:
             print(f'- {patient.name} ({patient.urgency})')
+
+
+    def heap_peak(self):
+        if len(self.data) > 0:
+            return self.data[0]
+        
+        else:
+            return None
