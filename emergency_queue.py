@@ -3,6 +3,9 @@ class Patient:
         self.name = name
         self.urgency = urgency
 
+    def __str__(self):
+        return f'{self.name} - ({self.urgency})'
+
 
 
 class MinHeap:
@@ -58,7 +61,7 @@ class MinHeap:
 
 
     def print_heap(self):
-        print("Current Patient Queue: ")
+        print("Current Patients In Queue: ")
         for patient in self.data:
             print(f'- {patient.name} ({patient.urgency})')
 
@@ -83,3 +86,25 @@ class MinHeap:
             self.data[0] = self.data.pop()
             self.heapify_down()
             return result
+    
+    
+
+
+
+
+patient_heap = MinHeap()
+
+print("Testing remove_min with never-populated heap:")
+print(f'{patient_heap.remove_min()}')
+
+patient_heap.insert(Patient("Jordan", 3))
+patient_heap.insert(Patient("Taylor", 1))
+patient_heap.insert(Patient("Avery", 5))
+patient_heap.insert(Patient("Joe", 1))
+patient_heap.insert(Patient("Mark", 8))
+patient_heap.insert(Patient("Bob", 2))
+patient_heap.print_heap()
+
+print("Removing patients normally:")
+for i in range(7): #doing more than nessecery to simulate empty heap
+    print(f'{patient_heap.remove_min()}')
