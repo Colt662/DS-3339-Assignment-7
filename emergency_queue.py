@@ -69,3 +69,17 @@ class MinHeap:
         
         else:
             return None
+
+
+    def remove_min(self):
+        if len(self.data) == 0:
+            return None
+
+        elif len(self.data) == 1:
+            return self.data.pop()
+
+        else:
+            result = self.data[0]
+            self.data[0] = self.data.pop()
+            self.heapify_down()
+            return result
