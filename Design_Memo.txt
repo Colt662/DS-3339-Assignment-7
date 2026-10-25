@@ -1,0 +1,12 @@
+At the bottom of your file or in a separate .txt file, include a short reflection (200–300 words) that answers the following questions:
+
+Why is a tree appropriate for the doctor structure?
+Because the management structure of the hospital forms a natural, precise, and strict hierarchy that mirrors the structure of the tree. 
+
+When might a software engineer use preorder, inorder, or postorder traversals?
+Preorder: When designing a system that naturally works from the top down /when the root matters. For example systems whose components have dependencies on other components higher up the tree such as certain pieces of software requiring certain other pieces of software to work correctly. 
+Inorder: When designing a system whose data is sorted and when that data is accessed in order. For example a binary search tree
+Postorder: When designing a system that naturally works from the bottom up. For example deleting the leafs of a tree before deleting their parents when deleting a tree.
+
+How do heaps help simulate real-time systems like emergency intake?
+They help simulate these systems by processing items based on a certain condition (such as severity of injury for patients), rather than in pure chronological order. Heaps specifically are useful for when items need to be processed in a definite order, but don't all arrive at once (like a hospital, loading docks, or railroad shunting yard). In this situation the items can't simply be sorted once and then iterated through like a typical list, but a typical arrival based queue would not be sufficient either since it would not respect the ordering condition.
