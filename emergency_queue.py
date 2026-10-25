@@ -57,3 +57,11 @@ class MinHeap:
                 self.heapify_down(smallest_index)
 
 # Test your MinHeap class here including edge cases
+    def insert(self, patient):
+        self.data.append(patient)
+        self.heapify_up()
+
+    def print_heap(self):
+        print("Current Patient Queue: ")
+        for patient in self.data:
+            print(f'- {patient.name} ({patient.urgency})')
