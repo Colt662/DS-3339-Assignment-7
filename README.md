@@ -1,5 +1,11 @@
 # Doctor Reporting Tree & Emergency Queue
 
+## Origin
+
+This project was made for a Data Structures class and is intended to showcase the use of tree traversal and heaps.
+
+A desgin memo/reflection is contained in [Design_Memo.txt](Design_Memo.txt).
+
 This assignment simulates a medical management system built using non-linear data structures. Students will implement a custom binary tree to model a doctor reporting structure and a min-heap to manage patient urgency in an emergency room queue. These components provide practice in recursive methods, priority-based operations, and tree traversal techniques.
 
 ## Classes
